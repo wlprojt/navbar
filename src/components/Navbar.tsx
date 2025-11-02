@@ -25,23 +25,37 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <motion.div
-              whileHover={{
-                rotate: [0, 10, -10, 5, 0],
-                transition: { duration: 0.6, ease: 'easeInOut' },
-              }}
-            >
-              <Image
-                src="/slogo.svg"
-                alt="Logo"
-                width={32}
-                height={32}
-                className="h-7 w-auto object-contain transition-transform duration-500 group-hover:rotate-90 group-hover:scale-90"
-              />
-            </motion.div>
-            <span className="text-white font-semibold text-lg">WishLight</span>
-          </Link>
+          <motion.div whileHover="hover">
+      <Link href="/" className="flex items-center gap-2 logo">
+        <motion.div
+          variants={{
+            hover: {
+              rotate: 90,
+              scale: 0.9,
+            },
+          }}
+          transition={{
+            type: 'spring',
+            stiffness: 200,
+            damping: 10,
+          }}
+        >
+          <Image
+            src="/slogo.svg"
+            alt="Logo"
+            width={32}
+            height={32}
+            className="h-7 w-auto object-contain"
+          />
+        </motion.div>
+        <motion.span
+          className="text-white font-semibold text-lg"
+        >
+          WishLight
+        </motion.span>
+      </Link>
+    </motion.div>
+
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
@@ -49,16 +63,17 @@ const Navbar = () => {
               <Link
                 key={href}
                 href={href}
-                className={`transition ${
+                className={`transition duration-300 transform ${
                   pathname === href
-                    ? 'text-blue-400'
-                    : 'text-white hover:text-blue-400'
+                    ? 'text-white scale-105'
+                    : 'text-gray-400 hover:text-white hover:-translate-y-0.5'
                 }`}
               >
                 {label}
               </Link>
             ))}
           </div>
+
 
           {/* Mobile Menu Button */}
           <button
