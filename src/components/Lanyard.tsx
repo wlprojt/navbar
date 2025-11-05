@@ -174,7 +174,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
       curve.points[1].copy(j2.current.lerped);
       curve.points[2].copy(j1.current.lerped);
       curve.points[3].copy(fixed.current.translation());
-      band.current.geometry.setPoints(curve.getPoints(32));
+      // band.current.geometry.setPoints(curve.getPoints(32));
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
@@ -234,8 +234,8 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
         </RigidBody>
       </group>
       <mesh ref={band}>
-        <MeshLineGeometry />
-        <MeshLineMaterial
+        {/* <meshLineGeometry />
+        <meshLineMaterial
           color="white"
           depthTest={false}
           resolution={isSmall ? [1000, 2000] : [1000, 1000]}
@@ -243,7 +243,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
           map={texture}
           repeat={[-4, 1]}
           lineWidth={1}
-        />
+        /> */}
       </mesh>
     </>
   );
