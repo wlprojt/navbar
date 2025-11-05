@@ -3,6 +3,8 @@
 import React from 'react'
 import ScrollVelocity from './ScrollVelocity'
 import Image from 'next/image'
+import GradientText from './GradientText'
+import { tr } from 'framer-motion/client'
 
 const testimonials = [
   {
@@ -98,8 +100,15 @@ const Homethree = () => {
 
   return (
     <section className="relative w-full bg-black flex flex-col items-center justify-center overflow-hidden py-20">
-      <h1 className="gradient-animated-text text-center mx-1 font-bold text-3xl md:text-4xl">
-        Loved by users worldwide
+      <h1 className=" text-center mx-1 font-bold text-3xl md:text-4xl">
+        <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          animationSpeed={8}
+          showBorder={false}
+          className="custom-class"
+        >
+          Loved by users worldwide
+        </GradientText>
       </h1>
       <p className='text-center mb-12 text-gray-400'>
         See what users are saying about wish-light

@@ -1,10 +1,12 @@
 'use client'
-
+// @ts-ignore
 import AutoSlider from '@/components/AutoSlider'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+// @ts-ignore
 import GlareHover from '@/components/GlareHover'
+// @ts-ignore
 import { Button } from '@/components/ui/button'
 
 
