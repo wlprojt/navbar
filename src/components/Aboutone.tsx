@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 // @ts-ignore
-import Lanyard from '@/components/Lanyard'
+import Lanyard from './Lanyard'
 import Link from 'next/link'
 // @ts-ignore
 import GlareHover from '@/components/GlareHover'
