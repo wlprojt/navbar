@@ -1,12 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-// @ts-ignore
 import Lanyard from './Lanyard'
 import Link from 'next/link'
-// @ts-ignore
 import GlareHover from '@/components/GlareHover'
-// @ts-ignore
 import { Button } from '@/components/ui/button'
 
 
