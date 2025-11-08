@@ -1,11 +1,13 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
+import CountUp from './CountUp';
 
 export interface BentoCardProps {
   color?: string;
   title?: string;
   description?: string;
-  label?: string;
+  gif?:any;
+  label?: any;
   textAutoHide?: boolean;
   disableAnimations?: boolean;
 }
@@ -31,41 +33,52 @@ const MOBILE_BREAKPOINT = 768;
 
 const cardData: BentoCardProps[] = [
   {
-    color: '#060010',
-    title: 'Analytics',
-    description: 'Track user behavior',
-    label: 'Insights'
-  },
-  {
-    color: '#060010',
-    title: 'Dashboard',
-    description: 'Centralized data view',
-    label: 'Overview'
-  },
-  {
-    color: '#060010',
-    title: 'Collaboration',
-    description: 'Work together seamlessly',
-    label: 'Teamwork'
-  },
-  {
-    color: '#060010',
-    title: 'Automation',
-    description: 'Streamline workflows',
-    label: 'Efficiency'
-  },
-  {
-    color: '#060010',
-    title: 'Integration',
-    description: 'Connect favorite tools',
-    label: 'Connectivity'
-  },
-  {
-    color: '#060010',
-    title: 'Security',
-    description: 'Enterprise-grade protection',
-    label: 'Protection'
-  }
+      color: '#060010',
+      title: 'High-Performance & Attractive UI',
+      description: 'Loved by users around the world',
+      gif: '/pc.gif',
+      label: <div className="flex items-baseline gap-1">
+        <CountUp
+          from={0}
+          to={100}
+          duration={1.5}
+          separator=","
+          className="count-up-text gradient-animated-text text-7xl md:text-8xl font-semibold"
+        />
+        <span className="text-7xl md:text-8xl gradient-animated-text font-semibold">%</span>
+      </div>,
+    },
+    {
+      color: '#060010',
+      title: 'Modern Tech Stack',
+      description: 'Next.js, Kotlin, Swift, TypeScript, Firebase, and more',
+      gif: '/automation.gif',
+      label: <div className="flex items-baseline gap-1">
+        <CountUp
+          from={0}
+          to={9}
+          duration={1.5}
+          separator=","
+          className="count-up-text gradient-animated-text text-7xl md:text-8xl font-semibold"
+        />
+        <span className="text-7xl md:text-8xl gradient-animated-text font-semibold">+</span>
+      </div>,
+    },
+    {
+      color: '#060010',
+      title: 'Cross-Platform Development',
+      description: 'Delivering seamless apps on Web, Android, and iOS',
+      gif: '/giphy.gif',
+      label: <div className="flex items-baseline gap-1">
+        <CountUp
+          from={0}
+          to={3}
+          duration={1.5}
+          separator=","
+          className="count-up-text gradient-animated-text text-7xl md:text-8xl font-semibold"
+        />
+      </div>,
+    }
 ];
 
 const createParticleElement = (x: number, y: number, color: string = DEFAULT_GLOW_COLOR): HTMLDivElement => {
@@ -492,8 +505,8 @@ const BentoCardGrid: React.FC<{
   gridRef?: React.RefObject<HTMLDivElement | null>;
 }> = ({ children, gridRef }) => (
   <div
-    className="bento-section grid gap-2 p-3 max-w-[54rem] select-none relative"
-    style={{ fontSize: 'clamp(1rem, 0.9rem + 0.5vw, 1.5rem)' }}
+    className="bento-section grid gap-6 p-1 max-w-[100rem] select-none relative"
+        style={{ fontSize: 'clamp(1rem, 0.9rem + 0.5vw, 1.5rem)' }}
     ref={gridRef}
   >
     {children}
@@ -542,46 +555,59 @@ const MagicBento: React.FC<BentoProps> = ({
             --glow-intensity: 0;
             --glow-radius: 200px;
             --glow-color: ${glowColor};
-            --border-color: #392e4e;
-            --background-dark: #060010;
+            --border-color: #ffffff36;
+            --background-dark: #e87a26ff;
             --white: hsl(0, 0%, 100%);
-            --purple-primary: rgba(132, 0, 255, 1);
-            --purple-glow: rgba(132, 0, 255, 0.2);
-            --purple-border: rgba(132, 0, 255, 0.8);
+            --orange-primary: rgba(255, 165, 0, 1);
+            --orange-glow: rgba(255, 165, 0, 0.2);
+            --orange-border: rgba(255, 165, 0, 0.8);
           }
           
           .card-responsive {
+            display: grid;               /* <<< ensure grid is active */
             grid-template-columns: 1fr;
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
             padding: 0.5rem;
+            gap: 0.75rem;
           }
+
+
+          .card-responsive .card:nth-child(2) {
+              grid-column: span 2;
+              grid-row: span 1;
+              width: 100%;
+            }
           
           @media (min-width: 600px) {
             .card-responsive {
+              width: 90vw;
               grid-template-columns: repeat(2, 1fr);
+              grid-auto-rows: 1fr;
+            }
+              .card-responsive .card:nth-child(2) {
+              grid-column: span 1;
+              grid-row: span 2;
+              min-height: 600px;
             }
           }
           
           @media (min-width: 1024px) {
             .card-responsive {
-              grid-template-columns: repeat(4, 1fr);
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              grid-auto-rows: 1fr;
+              width: 60vw;
+              gap: 1rem;
             }
             
-            .card-responsive .card:nth-child(3) {
+            .card-responsive .card:nth-child(2) {
               grid-column: span 2;
               grid-row: span 2;
+              min-height: 600px;
+              width: 100%;
             }
             
-            .card-responsive .card:nth-child(4) {
-              grid-column: 1 / span 2;
-              grid-row: 2 / span 2;
-            }
-            
-            .card-responsive .card:nth-child(6) {
-              grid-column: 4;
-              grid-row: 3;
-            }
           }
           
           .card--border-glow::after {
@@ -647,15 +673,24 @@ const MagicBento: React.FC<BentoProps> = ({
           
           @media (max-width: 599px) {
             .card-responsive {
-              grid-template-columns: 1fr;
-              width: 90%;
+              grid-template-columns: repeat(2, 1fr);
+              width: 100%;
               margin: 0 auto;
               padding: 0.5rem;
             }
-            
+
             .card-responsive .card {
               width: 100%;
-              min-height: 180px;
+              min-height: 250px;
+            }
+
+            .card-responsive .card:first-child {
+              grid-column: 1 / -1; /* full width */
+            }
+
+            .card-responsive .card:nth-child(2),
+            .card-responsive .card:nth-child(3) {
+              grid-column: span 1;
             }
           }
         `}
@@ -672,11 +707,18 @@ const MagicBento: React.FC<BentoProps> = ({
       )}
 
       <BentoCardGrid gridRef={gridRef}>
-        <div className="card-responsive grid gap-2">
+        <div className="card-responsive grid gap-3">
           {cardData.map((card, index) => {
-            const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+            const isFirst = index === 0;
+            const [hovered, setHovered] = useState(false)
+            const baseClassName = `card flex flex-col justify-between relative min-h-[290px] auto-rows-fr w-full md:my-1 md:mx-1 p-8 rounded-[24px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? 'card--border-glow' : ''
             }`;
+
+            // If first card, override the size-limiting utility classes
+              const firstOverrides = isFirst ? 'max-w-none aspect-auto col-span-full z-10' : 'max-w-[420px]';
+
+              const combinedClassName = `${baseClassName} ${firstOverrides}`;
 
             const cardStyle = {
               backgroundColor: card.color || 'var(--background-dark)',
@@ -701,8 +743,23 @@ const MagicBento: React.FC<BentoProps> = ({
                   clickEffect={clickEffect}
                   enableMagnetism={enableMagnetism}
                 >
-                  <div className="card__header flex justify-between gap-3 relative text-white">
+                  <div
+                      className="card__header flex justify-between gap-3 relative text-white"
+                      onMouseEnter={() => setHovered(true)}
+                      onMouseLeave={() => setHovered(false)}
+                    >
                     <span className="card__label text-base">{card.label}</span>
+
+                    {/* GIF fades in when hovered */}
+                      <div className="relative w-0 h-0 md:w-50 md:h-50 overflow-hidden">
+                        <img
+                          src={card.gif}
+                          alt="card animation"
+                          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${
+                            hovered ? 'opacity-100' : 'opacity-0'
+                          }`}
+                        />
+                      </div>
                   </div>
                   <div className="card__content flex flex-col relative text-white">
                     <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>

@@ -18,11 +18,11 @@ interface GlareHoverProps {
 }
 
 const GlareHover: React.FC<GlareHoverProps> = ({
-  width = '500px',
-  height = '500px',
-  background = '#000',
-  borderRadius = '10px',
-  borderColor = '#333',
+  width = 'auto',
+  height = '50px',
+  background = '#101bf2ff',
+  borderRadius = '100px',
+  borderColor = '#101bf2ff',
   children,
   glareColor = '#ffffff',
   glareOpacity = 0.5,

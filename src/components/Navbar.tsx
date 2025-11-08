@@ -15,7 +15,7 @@ export default function Navbar({ session }: { session: any }) {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   const handleSignOut = async () => {
-    // TODO: Add your sign-out logic here
+    // TODO: Replace with your actual sign-out logic
     console.log('Signing out...')
   }
 
@@ -33,20 +33,15 @@ export default function Navbar({ session }: { session: any }) {
           <motion.div whileHover="hover">
             <Link href="/" className="flex items-center gap-2 logo">
               <motion.div
-                variants={{
-                  hover: { rotate: 90, scale: 0.9 },
-                }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 200,
-                  damping: 10,
-                }}
+                variants={{ hover: { rotate: 90, scale: 0.9 } }}
+                transition={{ type: 'spring', stiffness: 200, damping: 10 }}
               >
                 <Image
                   src="/slogo.svg"
                   alt="Logo"
                   width={32}
                   height={32}
+                  priority
                   className="h-7 w-auto object-contain"
                 />
               </motion.div>
@@ -76,13 +71,15 @@ export default function Navbar({ session }: { session: any }) {
             {session ? (
               <Button
                 onClick={handleSignOut}
-                className="text-white transition"
+                className="bg-red-600 hover:bg-red-700 text-white transition"
               >
                 Logout
               </Button>
             ) : (
               <Link href="/login">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white transition">
                   Login
+                </Button>
               </Link>
             )}
           </div>
@@ -90,8 +87,9 @@ export default function Navbar({ session }: { session: any }) {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-white focus:outline-none"
             aria-label="Toggle Menu"
+            aria-expanded={isOpen}
+            className="md:hidden text-white focus:outline-none"
           >
             {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -124,7 +122,6 @@ export default function Navbar({ session }: { session: any }) {
                 </Link>
               ))}
 
-              {/* Auth Button (Mobile) */}
               {session ? (
                 <Button
                   onClick={() => {
