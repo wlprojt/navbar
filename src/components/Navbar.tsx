@@ -6,18 +6,23 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import { Button } from '../components/ui/button'
 
-const Navbar = () => {
+export default function Navbar({ session }: { session: any }) {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
+  const handleSignOut = async () => {
+    // TODO: Add your sign-out logic here
+    console.log('Signing out...')
+  }
+
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/projects', label: 'Projects' },
-    { href: '/login', label: 'Login' },
   ]
 
   return (
@@ -26,39 +31,33 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div whileHover="hover">
-      <Link href="/" className="flex items-center gap-2 logo">
-        <motion.div
-          variants={{
-            hover: {
-              rotate: 90,
-              scale: 0.9,
-            },
-          }}
-          transition={{
-            type: 'spring',
-            stiffness: 200,
-            damping: 10,
-          }}
-        >
-          <Image
-            src="/slogo.svg"
-            alt="Logo"
-            width={32}
-            height={32}
-            className="h-7 w-auto object-contain"
-          />
-        </motion.div>
-        <motion.span
-          className="text-white font-semibold text-lg"
-        >
-          WishLight
-        </motion.span>
-      </Link>
-    </motion.div>
-
+            <Link href="/" className="flex items-center gap-2 logo">
+              <motion.div
+                variants={{
+                  hover: { rotate: 90, scale: 0.9 },
+                }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 200,
+                  damping: 10,
+                }}
+              >
+                <Image
+                  src="/slogo.svg"
+                  alt="Logo"
+                  width={32}
+                  height={32}
+                  className="h-7 w-auto object-contain"
+                />
+              </motion.div>
+              <motion.span className="text-white font-semibold text-lg">
+                WishLight
+              </motion.span>
+            </Link>
+          </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-6 items-center">
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
@@ -72,8 +71,21 @@ const Navbar = () => {
                 {label}
               </Link>
             ))}
-          </div>
 
+            {/* Auth Buttons */}
+            {session ? (
+              <Button
+                onClick={handleSignOut}
+                className="text-white transition"
+              >
+                Logout
+              </Button>
+            ) : (
+              <Link href="/login">
+                  Login
+              </Link>
+            )}
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -111,6 +123,25 @@ const Navbar = () => {
                   {label}
                 </Link>
               ))}
+
+              {/* Auth Button (Mobile) */}
+              {session ? (
+                <Button
+                  onClick={() => {
+                    handleSignOut()
+                    setIsOpen(false)
+                  }}
+                  className="bg-red-600 hover:bg-red-700 text-white transition"
+                >
+                  Logout
+                </Button>
+              ) : (
+                <Link href="/login" onClick={() => setIsOpen(false)}>
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white transition">
+                    Login
+                  </Button>
+                </Link>
+              )}
             </div>
           </motion.div>
         )}
@@ -118,5 +149,3 @@ const Navbar = () => {
     </nav>
   )
 }
-
-export default Navbar
