@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { authClient } from '@/lib/auth-client'
-import { Button } from '@/components/ui/button'
+import { authClient } from '../../lib/auth-client'
+import { Button } from '../../components/ui/button'
 
 export default function ForgotPassword() {
   const router = useRouter()
