@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { authClient } from '../../lib/auth-client'
-import { Button } from '../../components/ui/button'
+import { authClient } from '@/lib/auth-client'
+import { Button } from '@/components/ui/button'
 
 export default function ResetPassword() {
   const router = useRouter()

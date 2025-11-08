@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
-import { Button } from '../components/ui/button'
+import { Button } from '@/components/ui/button'
 
 export default function Navbar({ session }: { session: any }) {
   const [isOpen, setIsOpen] = useState(false)

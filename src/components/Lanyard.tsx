@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
 import {
@@ -20,6 +20,15 @@ const cardGLB = './card.glb';
 const lanyard = './lanyard.png';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      meshLineGeometry: any;
+      meshLineMaterial: any;
+    }
+  }
+}
 
 interface LanyardProps {
   position?: [number, number, number];
@@ -174,7 +183,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
       curve.points[1].copy(j2.current.lerped);
       curve.points[2].copy(j1.current.lerped);
       curve.points[3].copy(fixed.current.translation());
-      // band.current.geometry.setPoints(curve.getPoints(32));
+      band.current.geometry.setPoints(curve.getPoints(32));
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
@@ -183,6 +192,21 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
 
   curve.curveType = 'chordal';
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+
+  const meshLineGeom = useMemo(() => new MeshLineGeometry(), []);
+  const meshLineMat = useMemo(() => {
+    // MeshLineMaterial expects some non-React props; create it imperatively and keep it stable.
+    const mat: any = new MeshLineMaterial({
+      color: 'white',
+      depthTest: false,
+      resolution: new THREE.Vector2(isSmall ? 1000 : 1000, isSmall ? 2000 : 1000),
+      useMap: true,
+      map: texture,
+      repeat: new THREE.Vector2(-4, 1),
+      lineWidth: 1
+    } as any);
+    return mat;
+  }, [texture, isSmall]);
 
   return (
     <>
@@ -233,18 +257,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
           </group>
         </RigidBody>
       </group>
-      <mesh ref={band}>
-        {/* <meshLineGeometry />
-        <meshLineMaterial
-          color="white"
-          depthTest={false}
-          resolution={isSmall ? [1000, 2000] : [1000, 1000]}
-          useMap
-          map={texture}
-          repeat={[-4, 1]}
-          lineWidth={1}
-        /> */}
-      </mesh>
+      <mesh ref={band} geometry={meshLineGeom} material={meshLineMat} />
     </>
   );
 }

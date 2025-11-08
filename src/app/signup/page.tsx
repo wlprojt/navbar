@@ -1,7 +1,7 @@
 'use client'
 
-import { authClient } from '../../lib/auth-client'
-import { Button } from '../../components/ui/button'
+import { authClient } from '@/lib/auth-client'
+import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { redirect, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'

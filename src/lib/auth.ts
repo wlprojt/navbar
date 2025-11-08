@@ -1,9 +1,9 @@
 import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
-import VerifyEmail from "../components/verify-email";
+import VerifyEmail from "@/components/verify-email";
 import { Resend } from "resend";
-import ForgotPasswordEmail from "../components/reset-password";
+import ForgotPasswordEmail from "@/components/reset-password";
 
 const client = new MongoClient(process.env.MONGODB_URI!);
 const db = client.db();

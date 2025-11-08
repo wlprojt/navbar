@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import { ThemeProvider } from "../components/theme-provider"
-import AutoSlider from "../components/AutoSlider";
-import Footer from "../components/Footer";
-import { auth } from '../lib/auth';
+import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/theme-provider"
+import AutoSlider from "@/components/AutoSlider";
+import Footer from "@/components/Footer";
+import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 
 const geistSans = Geist({
@@ -42,7 +42,7 @@ export default async function RootLayout({
             attribute="class"
             defaultTheme="system"
           >
-            {/* <Navbar session={session}/> */}
+            <Navbar session={session}/>
             {children}
             <Footer />
           </ThemeProvider>

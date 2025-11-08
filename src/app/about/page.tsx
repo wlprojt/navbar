@@ -1,6 +1,8 @@
-import Aboutone from '../../components/Aboutone'
+// @ts-ignore
+import Aboutone from '@/components/Aboutone'
 import React from 'react'
-import Abouttwo from '../../components/Abouttwo'
+// @ts-ignore
+import Abouttwo from '@/components/Abouttwo'
 
 const page = () => {
   return (
