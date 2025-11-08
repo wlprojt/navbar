@@ -42,7 +42,7 @@ export default async function RootLayout({
             attribute="class"
             defaultTheme="system"
           >
-            <Navbar session={session}/>
+            {/* <Navbar session={session}/> */}
             {children}
             <Footer />
           </ThemeProvider>
