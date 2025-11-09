@@ -1,3 +1,5 @@
+'use client'
+
 import { Home } from 'lucide-react'
 import React from 'react'
 import Homeone from '@/components/Homeone'
