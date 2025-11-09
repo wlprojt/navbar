@@ -1,4 +1,4 @@
 import { createAuthClient } from "better-auth/react"
 export const authClient = createAuthClient({
-    baseURL: "https://www.wish-light.com"
+    baseURL: process.env.AUTH_URL!
 })

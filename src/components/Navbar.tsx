@@ -5,18 +5,22 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { usePathname } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
+import { authClient } from '@/lib/auth-client'
 
 export default function Navbar({ session }: { session: any }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [currentSession, setCurrentSession] = useState(session)
+  const router = useRouter()
   const pathname = usePathname()
 
   const toggleMenu = () => setIsOpen(!isOpen)
 
-  const handleSignOut = async () => {
-    // TODO: Replace with your actual sign-out logic
-    console.log('Signing out...')
+  async function handleSignOut() {
+    await authClient.signOut()
+    setCurrentSession(null)
+    router.push('/')
   }
 
   const navLinks = [
@@ -67,8 +71,7 @@ export default function Navbar({ session }: { session: any }) {
               </Link>
             ))}
 
-            {/* Auth Buttons */}
-            {session ? (
+            {currentSession ? (
               <Button
                 onClick={handleSignOut}
                 className="bg-red-600 hover:bg-red-700 text-white transition"
@@ -89,6 +92,7 @@ export default function Navbar({ session }: { session: any }) {
             onClick={toggleMenu}
             aria-label="Toggle Menu"
             aria-expanded={isOpen}
+            aria-controls="mobile-menu"
             className="md:hidden text-white focus:outline-none"
           >
             {isOpen ? <X size={26} /> : <Menu size={26} />}
@@ -96,10 +100,11 @@ export default function Navbar({ session }: { session: any }) {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -122,7 +127,7 @@ export default function Navbar({ session }: { session: any }) {
                 </Link>
               ))}
 
-              {session ? (
+              {currentSession ? (
                 <Button
                   onClick={() => {
                     handleSignOut()
