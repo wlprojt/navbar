@@ -5,7 +5,7 @@ import VerifyEmail from "@/components/verify-email";
 import { Resend } from "resend";
 import ForgotPasswordEmail from "@/components/reset-password";
 
-const client = new MongoClient(process.env.MONGODB_URI!);
+const client = new MongoClient(process.env.MONGODB_URI as string);
 const db = client.db();
 const resend = new Resend(process.env.RESEND_API_KEY as string);
 
