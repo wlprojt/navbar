@@ -29,7 +29,7 @@ export default function ClientNotes() {
   // 🚀 Redirect if not authenticated
   useEffect(() => {
     if (!isPending && !session) {
-      router.push('/'); // ✅ client-side redirect
+      router.push('/login'); // ✅ client-side redirect
     }
   }, [isPending, session, router]);
 
@@ -79,7 +79,7 @@ export default function ClientNotes() {
   return (
     <>
 
-      <div className="appContainer mt-4 mx-2">
+      <div className="appContainer mt-20 mx-2">
         {loading ? (
           <p className="text-gray-500 mt-4">Loading notes...</p>
         ) : notes.length === 0 ? (

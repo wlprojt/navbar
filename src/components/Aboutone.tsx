@@ -76,7 +76,7 @@ export default function AboutPage() {
           </GlareHover>
           </motion.div>
           <Link
-            href="#projects"
+            href="/dashboard"
             className="px-6 py-3 border border-gray-400 hover:border-white text-gray-200 hover:text-white rounded-full transition-all duration-300"
           >
             Add Project Details
