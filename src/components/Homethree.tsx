@@ -5,6 +5,7 @@ import ScrollVelocity from './ScrollVelocity'
 import Image from 'next/image'
 import GradientText from './GradientText'
 import { tr } from 'framer-motion/client'
+import Link from 'next/link'
 
 const testimonials = [
   {
@@ -155,7 +156,9 @@ const Homethree = () => {
         futuristic app and web development. Sign up now and get started!
       </p>
       <button className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-500 hover:to-purple-500 transition-all text-white py-2 px-6 rounded-lg shadow-lg">
-        Get Started
+        <Link href="/dashboard">
+          Get Started
+        </Link>
       </button>
     </div>
   </div>

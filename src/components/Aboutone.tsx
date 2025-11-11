@@ -68,7 +68,7 @@ export default function AboutPage() {
           className="px-6 py-6 w-full bg-blue-600 hover:bg-blue-700 hover:mb-2 text-white font-semibold rounded-full shadow-lg transition-all duration-300"
           >
             <Link
-              href="#contact"
+              href="/contact"
             >
               Contact Me 💬
             </Link>

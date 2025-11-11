@@ -52,15 +52,15 @@ export default function Footer() {
 
         {/* Links */}
         <div className="flex gap-8 items-center justify-center text-gray-400">
-          <Link href="mailto:contact@wishlight.com" className="flex items-center gap-2 hover:text-white transition">
+          <Link href="/contact" className="flex items-center gap-2 hover:text-white transition">
             <SiMaildotru className="h-4 w-4" />
             <span>Contact</span>
           </Link>
-          <Link href="https://github.com/" target="_blank" className="flex items-center gap-2 hover:text-white transition">
+          <Link href="https://github.com/wlprojt" target="_blank" className="flex items-center gap-2 hover:text-white transition">
             <SiGithub className="h-4 w-4" />
             <span>GitHub</span>
           </Link>
-          <Link href="https://youtube.com/" target="_blank" className="flex items-center gap-2 hover:text-white transition">
+          <Link href="https://youtube.com/wlproject" target="_blank" className="flex items-center gap-2 hover:text-white transition">
             <SiYoutube className="h-4 w-4" />
             <span>YouTube</span>
           </Link>

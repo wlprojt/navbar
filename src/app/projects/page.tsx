@@ -1,6 +1,13 @@
-'use client'
 
+
+import { Metadata } from 'next';
 import React from 'react'
+
+
+export const metadata: Metadata = {
+  title: "wish-light | Project",
+  description: "Website, Android, and iOS app developer portfolio",
+};
 
 const page = () => {
   return (

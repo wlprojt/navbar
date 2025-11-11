@@ -4,9 +4,7 @@ import AutoSlider from '@/components/AutoSlider'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-// @ts-ignore
 import GlareHover from '@/components/GlareHover'
-// @ts-ignore
 import { Button } from '@/components/ui/button'
 
 
@@ -45,7 +43,7 @@ export default function Hero() {
           className="px-6 py-6 w-full bg-blue-600 hover:bg-blue-700 hover:mb-2 text-white font-semibold rounded-full shadow-lg transition-all duration-300"
           >
             <Link
-              href="#contact"
+              href="/dashboard"
             >
               Let’s Work Together 🚀
             </Link>
@@ -53,7 +51,7 @@ export default function Hero() {
           </GlareHover>
           </motion.div>
           <Link
-            href="#projects"
+            href="/projects"
             className="px-6 py-3 border border-gray-400 hover:border-white text-gray-200 hover:text-white rounded-full transition-all duration-300"
           >
             View My Work
