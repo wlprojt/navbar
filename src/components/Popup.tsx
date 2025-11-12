@@ -26,7 +26,7 @@ const Popup = ({ setOpenPopup, editMode, setupdateUI, existingNote }: PropsType)
   }, []);
 
   const saveNewNote = async () => {
-    if (!note.trim()) return alert('Please enter a note.');
+    if (!note.trim()) return alert('Please enter a project.');
     if (!session?.user?.email) return alert('Session expired. Please sign in again.');
 
     setLoading(true);
@@ -39,7 +39,7 @@ const Popup = ({ setOpenPopup, editMode, setupdateUI, existingNote }: PropsType)
       setOpenPopup(false);
     } catch (err: any) {
       console.error(err);
-      alert('Failed to save note.');
+      alert('Failed to save project.');
     } finally {
       setLoading(false);
     }
@@ -59,7 +59,7 @@ const Popup = ({ setOpenPopup, editMode, setupdateUI, existingNote }: PropsType)
       setOpenPopup(false);
     } catch (err: any) {
       console.error(err);
-      alert('Failed to edit note.');
+      alert('Failed to edit project.');
     } finally {
       setLoading(false);
     }
@@ -67,7 +67,7 @@ const Popup = ({ setOpenPopup, editMode, setupdateUI, existingNote }: PropsType)
 
   const deleteNote = async () => {
     if (!existingNote?._id) return;
-    if (!confirm('Are you sure you want to delete this note?')) return;
+    if (!confirm('Are you sure you want to delete this project?')) return;
 
     setLoading(true);
     try {
@@ -78,7 +78,7 @@ const Popup = ({ setOpenPopup, editMode, setupdateUI, existingNote }: PropsType)
       setOpenPopup(false);
     } catch (err: any) {
       console.error(err);
-      alert('Failed to delete note.');
+      alert('Failed to delete project.');
     } finally {
       setLoading(false);
     }
@@ -94,13 +94,13 @@ const Popup = ({ setOpenPopup, editMode, setupdateUI, existingNote }: PropsType)
           onClick={() => setOpenPopup(false)}
         />
         <h2 className="text-[24px] text-gray-400 pb-2">
-          {editMode ? 'Edit Note' : 'Add Note'}
+          {editMode ? 'Edit Project' : 'Add Project'}
         </h2>
         <textarea
           autoFocus
           className="bg-transparent border border-[#323949] w-full text-gray-300 p-4 rounded-md focus:outline-none resize-none"
           rows={10}
-          placeholder="Add Note..."
+          placeholder="Add Project + Contact Details(WhatsApp || Telegram || Signal)..."
           value={note}
           onChange={(e) => setNote(e.target.value)}
         />
