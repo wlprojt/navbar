@@ -3,6 +3,7 @@ import Aboutone from '@/components/Aboutone'
 import React from 'react'
 import Abouttwo from '@/components/Abouttwo'
 import { Metadata } from 'next';
+import Aboutthree from '@/components/Aboutthree';
 
 export const metadata: Metadata = {
   title: "wish-light | About",
@@ -14,6 +15,7 @@ const page = () => {
     <div>
         <Aboutone />
         <Abouttwo />
+        <Aboutthree />
     </div>
   )
 }

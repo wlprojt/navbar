@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import SpotlightCard from './SpotlightCard'
 import Image from 'next/image'
+import GradientText from './GradientText'
 
 const services = [
   {
@@ -29,6 +30,20 @@ const services = [
 
 export default function Abouttwo() {
   return (
+    <>
+    <h1 className=" text-center mx-1 font-bold text-3xl md:text-4xl">
+      <GradientText
+        colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+        animationSpeed={8}
+        showBorder={false}
+        className="custom-class"
+      >
+        Services
+      </GradientText>
+    </h1>
+    <p className='text-center text-gray-400'>
+      Transforming ideas into intuitive digital experiences
+    </p>
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -44,8 +59,8 @@ export default function Abouttwo() {
     transition={{ duration: 0.5, delay: index * 0.1 }}
   >
     <SpotlightCard
-      className="w-80 text-gray-200 h-70 flex flex-col items-center justify-center p-6"
-      spotlightColor="rgba(0, 119, 255, 0.73)"
+      className="bg-[#4079ff] w-80 text-gray-200 h-70 flex flex-col items-center justify-center p-6"
+      spotlightColor="rgba(64, 255, 170, 1)"
     >
       <Image
         src={service.icon}
@@ -61,5 +76,6 @@ export default function Abouttwo() {
 ))}
 
     </motion.div>
+    </>
   )
 }

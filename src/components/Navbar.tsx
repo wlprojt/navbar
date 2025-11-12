@@ -49,8 +49,8 @@ export default function Navbar({ session }: { session: any }) {
                   className="h-7 w-auto object-contain"
                 />
               </motion.div>
-              <motion.span className="text-white font-semibold text-lg">
-                WishLight
+              <motion.span className="text-white font-semibold text-2xl">
+                wish-light
               </motion.span>
             </Link>
           </motion.div>

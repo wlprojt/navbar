@@ -1,0 +1,128 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import GradientText from './GradientText'
+import ChromaGrid from './ChromaGrid'
+
+const projects = [
+  {
+    image: "/wnote.png",
+    title: "Notes",
+    subtitle: "Next js",
+    handle: "Website",
+    borderColor: "#3B82F6",
+    gradient: "linear-gradient(145deg, #4287f6ff, #033789ff)",
+    url: "https://youtu.be/mH4dUVTHbYM?si=Vppo3ACjOumX4v1e"
+  },
+  {
+    image: "/anote.png",
+    title: "Notes",
+    subtitle: "Kotlin",
+    handle: "Android App",
+    borderColor: "#fa08deff",
+    gradient: "linear-gradient(180deg, #f260e1ff, #910581ff)",
+    url: "https://youtu.be/i5jb1PCDInw?si=qvnJnkU0E1F5OLkE"
+  },
+  {
+    image: "/inote.png",
+    title: "Notes",
+    subtitle: "Swift",
+    handle: "iOS App",
+    borderColor: "#d0f80bff",
+    gradient: "linear-gradient(145deg, #ddf271ff, #768d04ff)",
+    url: "https://youtu.be/LENpnn86VXM?si=B_NzHXT-EvroX7xR"
+  },
+  {
+    image: "/wweather.png",
+    title: "Weather",
+    subtitle: "Next js",
+    handle: "Website",
+    borderColor: "#10B981",
+    gradient: "linear-gradient(180deg, #5cedbcff, #03865bff)",
+    url: "https://youtu.be/WM5_TK-nx5I?si=eesfJ7m4NcydZVG-"
+  },
+  {
+    image: "/iweather.png",
+    title: "Weather",
+    subtitle: "Swift",
+    handle: "iOS App",
+    borderColor: "#8d01ffff",
+    gradient: "linear-gradient(145deg, #b568f3ff, #56039aff)",
+    url: "https://youtu.be/6gzSkEiieL0?si=uKJT41NLY7L0Bk-p"
+  },
+  {
+    image: "/aweather.png",
+    title: "Weather",
+    subtitle: "Kotlin",
+    handle: "Android App",
+    borderColor: "#ff6200ff",
+    gradient: "linear-gradient(180deg, #f3a16eff, #973c03ff)",
+    url: "https://youtu.be/m9Np1_3QlpA?si=Wmyi1wR6APjkNjhX"
+  },
+  {
+    image: "/wbot.png",
+    title: "Chat Bot",
+    subtitle: "Next js",
+    handle: "Website",
+    borderColor: "#eeff06ff",
+    gradient: "linear-gradient(145deg, #ecf571ff, #838c03ff)",
+    url: "https://youtu.be/lRv6YGsoucs?si=edP5jUCu6vaxVF_f"
+  },
+  {
+    image: "/wbackgroun.png",
+    title: "Background",
+    subtitle: "Next js",
+    handle: "Website",
+    borderColor: "#f80404ff",
+    gradient: "linear-gradient(180deg, #f87373ff, #930202ff)",
+    url: "https://youtu.be/f5LxH1tdxU4?si=nQz5pcnoA0ZWPAqH"
+  }
+]
+
+const Aboutthree = () => {
+  return (
+    <>
+      <h1 className="text-center mx-1 font-bold text-3xl md:text-4xl">
+        <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          animationSpeed={8}
+          showBorder={false}
+        >
+          My Projects
+        </GradientText>
+      </h1>
+
+      <p className="text-center text-gray-400">
+        Discover the projects that showcase my passion for design and innovation
+      </p>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-16 bg-[#060010] px-4 md:px-10 xl:mx-50 item-center justify-center"
+      >
+        {/* HORIZONTAL SCROLL CONTAINER */}
+        <div className="flex overflow-x-auto overflow-y-hidden flex-nowrap scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-[320px] h-[500px] md:w-[400px] md:h-[550px]"
+            >
+              <ChromaGrid
+                items={[project]}
+                radius={300}
+                damping={0.45}
+                fadeOut={0.6}
+                ease="power3.out"
+              />
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </>
+  )
+}
+
+export default Aboutthree
