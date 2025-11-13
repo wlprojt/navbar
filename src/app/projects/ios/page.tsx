@@ -5,6 +5,29 @@ import GooeyNav from '@/components/GooeyNav'
 import GradientText from '@/components/GradientText'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { FaGithub } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+
+const ios= [
+    {
+      image: '/inote.png',
+      title: 'Notes App',
+      resource: 'Swift, Swift UI, Local Database',
+      description: 'The Notes App is a modern note-taking application built with Swift, Swift UI, and Local Database. It features a clean, intuitive interface with real-time data persistence, dark mode support, and smooth animations. Designed for productivity and simplicity, it lets users create, edit, and organize notes effortlessly — all while maintaining a beautiful and responsive UI built entirely with Swift UI.',
+      youtube: 'https://youtu.be/LENpnn86VXM?si=uruPdHI4GMB7n8ug',
+      github: 'https://github.com/wlprojt/Notes'
+    },
+    {
+      image: '/iweather.png',
+      title: 'Weather App',
+      resource: 'Swift, Swift UI, API',
+      description: 'The Weather App is a sleek and responsive iOS application developed with Swift, Swift UI, and a real-time Weather API. It delivers accurate, up-to-date weather information with beautiful animations, dynamic icons, and smooth transitions. Users can instantly check current conditions, forecasts, and temperature details — all wrapped in a modern, minimal design optimized for both light and dark themes.',
+      youtube: 'https://youtu.be/6gzSkEiieL0?si=L5GpOdQBdRFZYH5-',
+      github: 'https://github.com/wlprojt/weather'
+    },
+  ]
 
 export default function Page() {
 
@@ -38,6 +61,51 @@ export default function Page() {
       >
         Discover the projects that showcase my passion for innovation
       </motion.p>
+      {/* Project Grid */}
+      <div className="mt-10 mb-10 grid grid-cols-1 gap-8 w-100 md:w-150 xl:w-200">
+        {ios.map((project, index) => (
+          <motion.div
+            key={index}
+            className="bg-gray-900/40 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8, ease: 'easeOut' }}
+            whileHover={{ scale: 1.03 }}
+          >
+            {/* Image */}
+            <div className="relative w-full h-100 md:h-150 xl:h-200">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* Title + Description */}
+            <div className="p-5">
+              <h2 className="text-xl font-semibold text-white">
+                {project.title}
+              </h2>
+              <p className="text-sm mb-2">{project.resource}</p>
+              <p className="text-gray-400 text-sm mb-2">{project.description}</p>
+              <div className="flex gap-4 mt-3">
+                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="flex items-center gap-2">
+                    <FaGithub /> GitHub
+                  </Button>
+                </a>
+                <a href={project.youtube} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="flex items-center gap-2">
+                    <FaYoutube /> YouTube
+                  </Button>
+                </a>
+              </div>
+
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </ div>
   )
 }
