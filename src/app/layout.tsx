@@ -7,6 +7,7 @@ import AutoSlider from "@/components/AutoSlider";
 import Footer from "@/components/Footer";
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
+import Pnave from "@/components/Pnave";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

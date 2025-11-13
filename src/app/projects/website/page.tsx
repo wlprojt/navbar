@@ -25,7 +25,7 @@ export default function Page() {
           showBorder={false}
           className="custom-class"
         >
-          Android App Projects
+          Website Projects
         </GradientText>
       </motion.h1>
 

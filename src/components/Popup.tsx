@@ -100,7 +100,7 @@ const Popup = ({ setOpenPopup, editMode, setupdateUI, existingNote }: PropsType)
           autoFocus
           className="bg-transparent border border-[#323949] w-full text-gray-300 p-4 rounded-md focus:outline-none resize-none"
           rows={10}
-          placeholder="Add Project + Contact Details(WhatsApp || Telegram || Signal)..."
+          placeholder="Add Project + Contact Details (WhatsApp || Telegram || Signal) ..."
           value={note}
           onChange={(e) => setNote(e.target.value)}
         />

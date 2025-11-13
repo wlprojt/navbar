@@ -87,7 +87,15 @@ export default function ClientNotes() {
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
             {notes.map((note) => (
-              <div key={note._id} className="relative group">
+              <div 
+                key={note._id} 
+                className="relative group"
+                onClick={() => {
+                    setSelectedNote(note);
+                    setEditMode(true);
+                    setOpenPopup(true);
+                  }}
+              >
                 <Note note={note.note} />
                 <button
                   onClick={() => {
