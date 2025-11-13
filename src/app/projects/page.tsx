@@ -62,7 +62,7 @@ export default function Page() {
         Discover the projects that showcase my passion for innovation
       </motion.p>
       {/* Project Grid */}
-      <div className="mt-10 mb-10 grid grid-cols-1 gap-8 w-100 md:w-150 xl:w-200">
+      <div className="mt-10 mb-10 grid grid-cols-1 gap-8 w-90 md:w-150 xl:w-200">
         {android.map((project, index) => (
           <motion.div
             key={index}
@@ -73,7 +73,7 @@ export default function Page() {
             whileHover={{ scale: 1.03 }}
           >
             {/* Image */}
-            <div className="relative w-full h-100 md:h-150 xl:h-200">
+            <div className="relative w-full h-90 md:h-150 xl:h-200">
               <Image
                 src={project.image}
                 alt={project.title}

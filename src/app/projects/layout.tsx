@@ -21,7 +21,7 @@ export default function ProjectsLayout({
 
   return (
     <div
-      className="flex flex-col items-center mt-20 px-4 mx-2"
+      className="flex flex-col items-center mt-20"
     >
         <GooeyNav
           items={items}
