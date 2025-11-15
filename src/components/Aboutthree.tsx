@@ -33,13 +33,13 @@ const projects = [
     url: "https://youtu.be/LENpnn86VXM?si=B_NzHXT-EvroX7xR"
   },
   {
-    image: "/wweather.png",
+    image: "/nweather.png",
     title: "Weather",
     subtitle: "Next js",
     handle: "Website",
     borderColor: "#10B981",
     gradient: "linear-gradient(180deg, #5cedbcff, #03865bff)",
-    url: "https://youtu.be/WM5_TK-nx5I?si=eesfJ7m4NcydZVG-"
+    url: "https://youtu.be/WA3F-7H6Ntk?si=ZjIZ-1kGOd9CS5Ny"
   },
   {
     image: "/iweather.png",

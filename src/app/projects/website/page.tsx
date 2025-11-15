@@ -21,13 +21,13 @@ const website = [
     github: 'https://github.com/wlprojt/nnotes',
   },
   {
-    image: '/wweather.png',
+    image: '/nweather.png',
     title: 'Weather Website',
     resource: 'HTML, CSS, JavaScript, Weather API',
     description:
       'The Weather Website is a lightweight and responsive web app that fetches live weather data using an external Weather API. Built with pure HTML, CSS, and JavaScript, it provides real-time forecasts, temperature updates, and animated weather icons in a clean, user-friendly interface.',
-    youtube: 'https://youtu.be/WM5_TK-nx5I?si=iHrsE7V8YA2gRh2I',
-    github: 'https://github.com/wlprojt',
+    youtube: 'https://youtu.be/WA3F-7H6Ntk?si=ZjIZ-1kGOd9CS5Ny',
+    github: 'https://github.com/wlprojt/nweather',
   },
   {
     image: '/wbot.png',
