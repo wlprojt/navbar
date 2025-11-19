@@ -23,7 +23,7 @@ const website = [
   {
     image: '/nweather.png',
     title: 'Weather Website',
-    resource: 'HTML, CSS, JavaScript, Weather API',
+    resource: 'TypeScript, Next.js, API',
     description:
       'The Weather Website is a lightweight and responsive web app that fetches live weather data using an external Weather API. Built with pure HTML, CSS, and JavaScript, it provides real-time forecasts, temperature updates, and animated weather icons in a clean, user-friendly interface.',
     youtube: 'https://youtu.be/WA3F-7H6Ntk?si=ZjIZ-1kGOd9CS5Ny',
@@ -39,14 +39,15 @@ const website = [
     github: 'https://github.com/wlprojt/aichat',
   },
   {
-    image: '/wbackgroun.png',
-    title: 'Background Website',
-    resource: 'TypeScript, Next.js, React Bits',
+    image: '/wsmartlight.png',
+    title: 'Smart Light',
+    resource: 'TypeScript, Next.js, Firebase',
     description:
-      'The Background Website is a creative project built with Next.js and React Bits, featuring dynamic gradients and animated visuals. Designed for designers and developers, it lets users explore, preview, and generate stunning background effects to enhance modern web interfaces.',
-    youtube: 'https://youtu.be/f5LxH1tdxU4?si=S6kSUn3WZjxefYiR',
-    github: 'https://github.com/wlprojt/ytone',
-  },
+      'A cloud-controlled smart lighting system built with Next.js and Firebase. Users can toggle lights remotely through a real-time web interface, making it ideal for home automation and IoT learning.',
+    youtube: 'https://youtu.be/374NSkIIrk4?si=_EfEXZFwrfU88b9-',
+    github: 'https://github.com/wlprojt/W-Smart-Light',
+  }
+
 ];
 
 

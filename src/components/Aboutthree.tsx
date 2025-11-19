@@ -69,8 +69,8 @@ const projects = [
     url: "https://youtu.be/lRv6YGsoucs?si=edP5jUCu6vaxVF_f"
   },
   {
-    image: "/wbackgroun.png",
-    title: "Background",
+    image: "/wsmartlight.png",
+    title: "Smart Light",
     subtitle: "Next js",
     handle: "Website",
     borderColor: "#f80404ff",
