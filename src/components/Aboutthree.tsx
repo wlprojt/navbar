@@ -76,6 +76,15 @@ const projects = [
     borderColor: "#f80404ff",
     gradient: "linear-gradient(180deg, #f87373ff, #930202ff)",
     url: "https://youtu.be/f5LxH1tdxU4?si=nQz5pcnoA0ZWPAqH"
+  },
+  {
+    image: "/asmartlight.png",
+    title: "Smart Light",
+    subtitle: "Kotlin",
+    handle: "Android App",
+    borderColor: "#6af804ff",
+    gradient: "linear-gradient(180deg, #a0f067ff, #3a8504ff)",
+    url: "https://youtu.be/_a4PHGZ6OeQ?si=ukaVwXzoy4Vbgygo"
   }
 ]
 

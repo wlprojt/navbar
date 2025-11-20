@@ -27,6 +27,14 @@ const android= [
       youtube: 'https://youtu.be/m9Np1_3QlpA?si=wCoZQmjHzsCyNvSK',
       github: 'https://github.com/wlprojt/Weather-App'
     },
+    {
+      image: '/asmartlight.png',
+      title: 'Smart Light App',
+      resource: 'Kotlin, Jetpack Compose, Firebase',
+      description: 'The Smart Light App is a modern IoT-based Android application built with Kotlin, Jetpack Compose, and Firebase Realtime Database. It allows users to remotely control lights in real time with smooth UI interactions, toggle states, and track device responses instantly. Designed with a clean, minimal interface, the app ensures seamless connectivity between mobile and hardware through Firebase, offering a fast, stable, and intuitive smart home experience.',
+      youtube: 'https://youtu.be/_a4PHGZ6OeQ?si=ukaVwXzoy4Vbgygo',
+      github: 'https://github.com/wlprojt/Asmart-Light'
+    },
   ]
 
 export default function Page() {
