@@ -85,6 +85,15 @@ const projects = [
     borderColor: "#6af804ff",
     gradient: "linear-gradient(180deg, #a0f067ff, #3a8504ff)",
     url: "https://youtu.be/_a4PHGZ6OeQ?si=ukaVwXzoy4Vbgygo"
+  },
+  {
+    image: "/ismartlight.png",
+    title: "Smart Light",
+    subtitle: "Swift",
+    handle: "iOS App",
+    borderColor: "#0145ffff",
+    gradient: "linear-gradient(145deg, #698cebff, #042e9fff)",
+    url: "https://youtu.be/9Js-WFiZjhs?si=teB7j-sJ_LIoI9Lx"
   }
 ]
 

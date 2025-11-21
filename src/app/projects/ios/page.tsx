@@ -27,6 +27,16 @@ const ios= [
       youtube: 'https://youtu.be/6gzSkEiieL0?si=L5GpOdQBdRFZYH5-',
       github: 'https://github.com/wlprojt/weather'
     },
+    {
+      image: '/ismartlight.png',
+      title: 'Smart Light',
+      resource: 'Swift, SwiftUI, Firebase',
+      description:
+        'Smart Light is an intuitive iOS app built with SwiftUI that allows users to control lights remotely in real-time using Firebase Realtime Database. The app features a clean UI, instant state syncing, and seamless toggling for IoT-driven home automation.',
+      youtube: 'https://youtu.be/9Js-WFiZjhs?si=fqB1lok6pObl30Ua',
+      github: 'https://github.com/wlprojt/IsmartLight'
+    }
+
   ]
 
 export default function Page() {
