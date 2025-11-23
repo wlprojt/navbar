@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function Payment() {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -13,10 +13,16 @@ export default function Payment() {
   }, []);
 
   const handlePay = async () => {
+    const numericAmount = Number(amount);
+
+    if (!numericAmount || numericAmount <= 0) {
+      return alert("Please enter a valid amount");
+    }
+
     const res = await fetch("/api/create-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount }),
+      body: JSON.stringify({ amount: numericAmount }),
     });
 
     const order = await res.json();
@@ -51,7 +57,7 @@ export default function Payment() {
           className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white outline-none focus:border-purple-400 transition"
           placeholder="Enter Amount"
           value={amount}
-          onChange={(e) => setAmount(Number(e.target.value))}
+          onChange={(e) => setAmount(e.target.value)} // FIXED
         />
 
         <button
