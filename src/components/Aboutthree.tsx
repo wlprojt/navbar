@@ -60,13 +60,13 @@ const projects = [
     url: "https://youtu.be/m9Np1_3QlpA?si=Wmyi1wR6APjkNjhX"
   },
   {
-    image: "/wbot.png",
+    image: "/wchatbot.png",
     title: "Chat Bot",
     subtitle: "Next js",
     handle: "Website",
     borderColor: "#eeff06ff",
     gradient: "linear-gradient(145deg, #ecf571ff, #838c03ff)",
-    url: "https://youtu.be/lRv6YGsoucs?si=edP5jUCu6vaxVF_f"
+    url: "https://youtu.be/BWsKtWLlaHA?si=JMxGceklihtEdclV"
   },
   {
     image: "/wsmartlight.png",

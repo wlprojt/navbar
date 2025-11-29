@@ -30,13 +30,13 @@ const website = [
     github: 'https://github.com/wlprojt/nweather',
   },
   {
-    image: '/wbot.png',
+    image: '/wchatbot.png',
     title: 'Chat Bot Website',
     resource: 'TypeScript, Next.js, Gemini API',
     description:
       'The Chat Bot Website is an AI-powered conversational web app built with Next.js, TypeScript, and Google’s Gemini API. It features real-time chat responses, a minimal UI, and smooth message animations — offering users an interactive and intelligent assistant experience directly in the browser.',
-    youtube: 'https://youtu.be/lRv6YGsoucs?si=rxwxmOtSeMAHdda8',
-    github: 'https://github.com/wlprojt/aichat',
+    youtube: 'https://youtu.be/BWsKtWLlaHA?si=JMxGceklihtEdclV',
+    github: 'https://github.com/wlprojt/Chatbot',
   },
   {
     image: '/wsmartlight.png',
