@@ -43,7 +43,7 @@ export default function ClientNotes() {
         const res = await axios.post('/api/get_note', { email: session.user.email });
         setNotes(res.data);
       } catch (err) {
-        console.error('❌ Error fetching notes:', err);
+        console.error('❌ Error fetching projects:', err);
       } finally {
         setLoading(false);
       }
@@ -81,9 +81,9 @@ export default function ClientNotes() {
 
       <div className="appContainer mt-20 mx-2">
         {loading ? (
-          <p className="text-gray-500 mt-4">Loading notes...</p>
+          <p className="text-gray-500 mt-4">Loading projects...</p>
         ) : notes.length === 0 ? (
-          <p className="text-gray-400 mt-4">No notes yet. Click + to add one.</p>
+          <p className="text-gray-400 mt-4">No projects yet. Click + to add one.</p>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
             {notes.map((note) => (
@@ -116,7 +116,7 @@ export default function ClientNotes() {
 
       {/* Floating Add Button */}
       <button
-        aria-label="Add new note"
+        aria-label="Add new project"
         className="bg-[#323949] rounded-full flex items-center justify-center w-[50px] h-[50px] text-[32px] font-light cursor-pointer text-gray-400 fixed z-10 right-4 bottom-4 hover:bg-gray-600 transition"
         onClick={() => {
           setSelectedNote(null);
