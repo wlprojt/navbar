@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const images = ['/web.png', '/oandroid.png', '/oios.png']
+const images = ['/bweb.png', '/bandroid.png', '/bios.png']
 
 export default function AutoSlider() {
   const [current, setCurrent] = useState(0)

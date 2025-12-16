@@ -39,15 +39,15 @@ export default function Hero() {
             transitionDuration={800}
             playOnce={false}
           >
-          <Button
-          className="px-6 py-6 w-full bg-blue-600 hover:bg-blue-700 hover:mb-2 text-white font-semibold rounded-full shadow-lg transition-all duration-300"
-          >
             <Link
               href="/dashboard"
             >
+          <Button
+          className="px-6 py-6 w-full bg-blue-600 hover:bg-blue-700 hover:mb-2 text-white font-semibold rounded-full shadow-lg transition-all duration-300"
+          >
               Let’s Work Together 🚀
-            </Link>
           </Button>
+          </Link>
           </GlareHover>
           </motion.div>
           <Link
