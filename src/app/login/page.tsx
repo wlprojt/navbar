@@ -5,12 +5,15 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { authClient } from '@/lib/auth-client'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+
 
 export default function LoginPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [emailLoading, setEmailLoading] = useState(false)
+  const [googleLoading, setGoogleLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   const { data: session, isPending } = authClient.useSession()
@@ -23,7 +26,7 @@ export default function LoginPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setLoading(true)
+    setEmailLoading(true)
     setError(null)
 
     try {
@@ -41,7 +44,7 @@ export default function LoginPage() {
           onError: (ctx) => {
             console.error('Login error:', ctx.error.message)
             setError(ctx.error.message)
-            setLoading(false)
+            setEmailLoading(false)
           },
         }
       )
@@ -53,22 +56,29 @@ export default function LoginPage() {
       console.error('Unexpected login error:', err)
       setError('Something went wrong. Please try again.')
     } finally {
-      setLoading(false)
+      setEmailLoading(false)
     }
   }
 
   const handleGoogleSignup = async () => {
+    setGoogleLoading(true);
+    setError(null);
     try {
-      const data = await authClient.signIn.social({
+      const res = await authClient.signIn.social({
         provider: 'google',
         callbackURL: '/dashboard',
-      })
-      console.log('Google signup response:', data)
+      });
+
+      if (res?.data?.redirect && res?.data?.url) {
+        window.location.href = res.data.url;
+      }
     } catch (err) {
-      console.error('Google signup failed:', err)
-      setError('Google sign-in failed. Please try again.')
+      console.error('Google signup failed:', err);
+      setError('Google sign-in failed. Please try again.');
+    } finally {
+      setGoogleLoading(false);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 px-4">
@@ -81,10 +91,16 @@ export default function LoginPage() {
         <Button
           onClick={handleGoogleSignup}
           className="w-full py-2 rounded-lg flex items-center justify-center gap-2 transition disabled:opacity-50"
-          disabled={loading}
+          disabled={googleLoading}
         >
-          <img src="/google-icon.svg" alt="Google" className="w-5 h-5" />
-          Sign in with Google
+          {googleLoading ? (
+            <span>Signing in...</span>
+          ) : (
+            <>
+              <Image src="/google-icon.svg" alt="Google" width={20} height={20} />
+              Sign in with Google
+            </>
+            )}
         </Button>
 
         <div className="flex items-center my-6">
@@ -122,10 +138,10 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            disabled={loading}
+            disabled={emailLoading}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition disabled:opacity-50"
           >
-            {loading ? 'Logging in...' : 'Log In'}
+            {emailLoading ? 'Logging in...' : 'Log In'}
           </button>
         </form>
 
