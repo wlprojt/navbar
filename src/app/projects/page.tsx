@@ -35,6 +35,14 @@ const android= [
       youtube: 'https://youtu.be/_a4PHGZ6OeQ?si=ukaVwXzoy4Vbgygo',
       github: 'https://github.com/wlprojt/Asmart-Light'
     },
+    {
+      image: '/achatbot.png',
+      title: 'Chat Bot App',
+      resource: 'Kotlin, Jetpack Compose, API',
+      description: 'The Chat Bot App is an innovative Android application developed with Kotlin, Jetpack Compose, and a conversational AI API. It features a sleek, user-friendly interface that allows users to engage in dynamic conversations with an AI-powered chatbot. The app boasts smooth animations, real-time message updates, and a modern design optimized for both light and dark modes. Whether for casual chatting or information retrieval, this app provides an engaging and interactive experience.',
+      youtube: 'https://youtu.be/m9Np1_3QlpA?si=Wmyi1wR6APjkNjhX',
+      github: 'https://github.com/wlprojt/Achatbot'
+    }
   ]
 
 export default function Page() {

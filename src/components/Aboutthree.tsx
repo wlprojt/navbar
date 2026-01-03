@@ -94,6 +94,24 @@ const projects = [
     borderColor: "#0145ffff",
     gradient: "linear-gradient(145deg, #698cebff, #042e9fff)",
     url: "https://youtu.be/9Js-WFiZjhs?si=teB7j-sJ_LIoI9Lx"
+  },
+  {
+    image: "/achatbot.png",
+    title: "Chat Bot",
+    subtitle: "Kotlin",
+    handle: "Android App",
+    borderColor: "#ff00a2ff",
+    gradient: "linear-gradient(180deg, #f67ecaff, #640341ff)",
+    url: "https://youtu.be/m9Np1_3QlpA?si=Wmyi1wR6APjkNjhX"
+  },
+  {
+    image: "/ichatbot.png",
+    title: "Chat Bot",
+    subtitle: "Swift",
+    handle: "iOS App",
+    borderColor: "#ff8800ff",
+    gradient: "linear-gradient(180deg, #f5b771ff, #834804ff)",
+    url: "https://youtu.be/m9Np1_3QlpA?si=Wmyi1wR6APjkNjhX"
   }
 ]
 

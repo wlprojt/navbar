@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function Payment() {
   const [amount, setAmount] = useState("");
+  const [currency, setCurrency] = useState<"INR" | "USD">("INR");
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -22,21 +23,20 @@ export default function Payment() {
     const res = await fetch("/api/create-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: numericAmount }),
+      body: JSON.stringify({
+        amount: numericAmount,
+        currency, // ✅ IMPORTANT
+      }),
     });
 
     const order = await res.json();
 
     const rzp = new (window as any).Razorpay({
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY,
-      amount: order.amount,
-      currency: order.currency,
       order_id: order.id,
       name: "My Store",
       description: "Premium Purchase",
-      theme: {
-        color: "#6366f1",
-      },
+      theme: { color: "#6366f1" },
       handler: (res: any) => {
         alert("Payment Success: " + res.razorpay_payment_id);
       },
@@ -52,13 +52,39 @@ export default function Payment() {
           💳 Make a Payment
         </h1>
 
+        {/* Amount */}
         <input
           type="number"
           className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white outline-none focus:border-purple-400 transition"
-          placeholder="Enter Amount"
+          placeholder={`Enter Amount (${currency})`}
           value={amount}
-          onChange={(e) => setAmount(e.target.value)} // FIXED
+          onChange={(e) => setAmount(e.target.value)}
         />
+
+        {/* Currency Toggle */}
+        <div className="flex gap-3 mt-4">
+          <button
+            onClick={() => setCurrency("INR")}
+            className={`flex-1 py-2 rounded-xl font-semibold transition ${
+              currency === "INR"
+                ? "bg-green-500 text-white"
+                : "bg-white/20 text-gray-300"
+            }`}
+          >
+            🇮🇳 INR
+          </button>
+
+          <button
+            onClick={() => setCurrency("USD")}
+            className={`flex-1 py-2 rounded-xl font-semibold transition ${
+              currency === "USD"
+                ? "bg-blue-500 text-white"
+                : "bg-white/20 text-gray-300"
+            }`}
+          >
+            🌍 USD
+          </button>
+        </div>
 
         <button
           onClick={handlePay}
