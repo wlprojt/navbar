@@ -20,8 +20,8 @@ export default function Hero() {
       >
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
           Building <span className="text-blue-500">Web</span>,{' '}
-          <span className="text-purple-500">Android</span> &{' '}
-          <span className="text-green-500">iOS</span> Experiences That Shine ✨
+          <span className="text-green-500">Android</span> &{' '}
+          <span className="text-purple-500">iOS</span> Experiences That Shine ✨
         </h1>
 
         <p className="text-gray-300 text-lg sm:text-xl max-w-xl mx-auto lg:mx-0 mb-8">

@@ -30,15 +30,6 @@ const website = [
     github: 'https://github.com/wlprojt/nweather',
   },
   {
-    image: '/wchatbot.png',
-    title: 'Chat Bot Website',
-    resource: 'TypeScript, Next.js, Gemini API',
-    description:
-      'The Chat Bot Website is an AI-powered conversational web app built with Next.js, TypeScript, and Google’s Gemini API. It features real-time chat responses, a minimal UI, and smooth message animations — offering users an interactive and intelligent assistant experience directly in the browser.',
-    youtube: 'https://youtu.be/BWsKtWLlaHA?si=JMxGceklihtEdclV',
-    github: 'https://github.com/wlprojt/Chatbot',
-  },
-  {
     image: '/wsmartlight.png',
     title: 'Smart Light',
     resource: 'TypeScript, Next.js, Firebase',
@@ -46,8 +37,16 @@ const website = [
       'A cloud-controlled smart lighting system built with Next.js and Firebase. Users can toggle lights remotely through a real-time web interface, making it ideal for home automation and IoT learning.',
     youtube: 'https://youtu.be/374NSkIIrk4?si=_EfEXZFwrfU88b9-',
     github: 'https://github.com/wlprojt/W-Smart-Light',
+  },
+  {
+    image: '/wchatbot.png',
+    title: 'Chat Bot Website',
+    resource: 'TypeScript, Next.js, Gemini API',
+    description:
+      'The Chat Bot Website is an AI-powered conversational web app built with Next.js, TypeScript, and Google’s Gemini API. It features real-time chat responses, a minimal UI, and smooth message animations — offering users an interactive and intelligent assistant experience directly in the browser.',
+    youtube: 'https://youtu.be/BWsKtWLlaHA?si=JMxGceklihtEdclV',
+    github: 'https://github.com/wlprojt/Chatbot',
   }
-
 ];
 
 

@@ -60,15 +60,6 @@ const projects = [
     url: "https://youtu.be/m9Np1_3QlpA?si=Wmyi1wR6APjkNjhX"
   },
   {
-    image: "/wchatbot.png",
-    title: "Chat Bot",
-    subtitle: "Next js",
-    handle: "Website",
-    borderColor: "#eeff06ff",
-    gradient: "linear-gradient(145deg, #ecf571ff, #838c03ff)",
-    url: "https://youtu.be/BWsKtWLlaHA?si=JMxGceklihtEdclV"
-  },
-  {
     image: "/wsmartlight.png",
     title: "Smart Light",
     subtitle: "Next js",
@@ -94,6 +85,15 @@ const projects = [
     borderColor: "#0145ffff",
     gradient: "linear-gradient(145deg, #698cebff, #042e9fff)",
     url: "https://youtu.be/9Js-WFiZjhs?si=teB7j-sJ_LIoI9Lx"
+  },
+  {
+    image: "/wchatbot.png",
+    title: "Chat Bot",
+    subtitle: "Next js",
+    handle: "Website",
+    borderColor: "#eeff06ff",
+    gradient: "linear-gradient(145deg, #ecf571ff, #838c03ff)",
+    url: "https://youtu.be/BWsKtWLlaHA?si=JMxGceklihtEdclV"
   },
   {
     image: "/achatbot.png",
