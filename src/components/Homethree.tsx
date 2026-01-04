@@ -10,84 +10,72 @@ const testimonials = [
     name: '@SarahThompson',
     img: '/face.jpeg',
     testimonial:
-      'Working with Rakesh was an absolute pleasure. He built our custom mobile app for both Android and iOS, and it runs flawlessly.',
-    href: "https://nextjs.org"
+      'Working with Rakesh was an absolute pleasure. He built our custom mobile app for both Android and iOS, and it runs flawlessly.'
   },
   {
     name: '@MichaelRodriguez',
     img: '/facea.jpeg',
     testimonial:
-      'Rakesh brought our web platform to life with speed and precision. Everything exceeded expectations!',
-    href: "https://nextjs.org"
+      'Rakesh brought our web platform to life with speed and precision. Everything exceeded expectations!'
   },
   {
     name: '@AditiSharma',
     img: '/faceb.jpeg',
     testimonial:
-      'He completely transformed our MVP into a polished, scalable app. We saw a 40% increase in user engagement after launch!',
-    href: "https://nextjs.org"
+      'He completely transformed our MVP into a polished, scalable app. We saw a 40% increase in user engagement after launch!'
   },
   {
     name: '@DavidLee',
     img: '/facec.jpeg',
     testimonial:
-      'He developed our cross-platform learning app with clean code and zero bugs. Truly professional!',
-    href: "https://nextjs.org"
-  },
+      'He developed our cross-platform learning app with clean code and zero bugs. Truly professional!'
+  }
 ]
 
 const testimonialtwo = [
   {
-    name: "@SarahThompson",
+    name: "@BrianJohnson",
     img: '/faced.jpeg',
-    testimonial: "Working with Rakesh was an absolute pleasure. He built our custom mobile app for both Android and iOS, and it runs flawlessly. His ability to turn complex requirements into smooth, user-friendly designs is exceptional.",
-    href: "https://nextjs.org"
+    testimonial: "Working with Wish-Light was a game-changer for our digital platform. Their team delivered a beautifully designed product on time and exceeded our expectations at every step. Communication was clear, development was smooth, and the final result was exactly what we needed to grow our business. Highly recommended!"
   },
   {
-    name: "@MichaelRodriguez",
+    name: "@JohnDoe",
     img: '/facee.jpeg',
-    testimonial: "Rakesh brought our web platform to life with speed and precision. From the responsive UI to the backend integrations, everything was delivered on time and exceeded our expectations.",
-    href: "https://nextjs.org"
+    testimonial: "We’re so glad we chose Wish-Light for our app development. They really listened to our needs and turned our ideas into reality. The final app works flawlessly and looks amazing. We couldn’t be happier with the results!"
   },
   {
-    name: "@AditiSharma",
+    name: "@SarahWilson",
     img: '/facef.jpeg',
-    testimonial: "He completely transformed our MVP into a polished, scalable app. His understanding of Flutter and React made the entire process seamless. We saw a 40% increase in user engagement after launch!",
-    href: "https://nextjs.org"
+    testimonial: "Wish-Light helped us increase user engagement by 40% with a fresh redesign and performance-focused build. Their expertise in both design and development made all the difference. We saw real results — fast."
   },
   {
     name: "@JamesCarter",
     img: '/faceg.jpeg',
-    testimonial: "Rakesh’s ability to handle full-stack development is rare. He built both our admin dashboard and mobile app with perfect API integration. Clear communication and zero missed deadlines!",
-    href: "https://nextjs.org"
-  },
+    testimonial: "Rakesh’s ability to handle full-stack development is rare. He built both our admin dashboard and mobile app with perfect API integration. Clear communication and zero missed deadlines!"
+  }
 ]
 
 const testimonialthree = [
   {
-    name: "@PriyaNair",
+    name: "@LindaMartinez",
     img: '/faceh.jpeg',
-    testimonial: "Our eCommerce site redesign was handled brilliantly. The new layout loads faster, looks beautiful, and works perfectly on all devices. Rakesh’s attention to detail is remarkable.",
-    href: "https://nextjs.org"
+    testimonial: "Our eCommerce site redesign was handled brilliantly. The new layout loads faster, looks beautiful, and works perfectly on all devices. Rakesh’s attention to detail is remarkable."
   },
   {
-    name: "@DavidLee",
+    name: "@DavidKim",
     img: '/facei.jpeg',
-    testimonial: "He developed our cross-platform learning app using Kotlin and Swift, and it’s been running smoothly ever since launch. His clean code and proactive problem-solving make him a top-tier developer.",
-    href: "https://nextjs.org"
+    testimonial: "Fast, talented, and reliable — Wish-Light delivered beyond our expectations. A fantastic partner for any digital project!"
   },
   {
-    name: "@MichaelRodriguez",
+    name: "@EmilyClark",
     img: '/facej.jpeg',
-    testimonial: "Rakesh brought our web platform to life with speed and precision. From the responsive UI to the backend integrations, everything was delivered on time and exceeded our expectations.",
-    href: "https://nextjs.org"
+    testimonial: "The Wish-Light team showcased exceptional technical skill and project ownership. From architectural decisions to UI polish, they delivered high-quality code and seamless user experience. We’re thrilled with the product and the process."
   },
   {
-    name: "@AditiSharma",
+    name: "@MarkAnderson",
     img: '/facek.jpeg',
     testimonial:
-      "He completely transformed our MVP into a polished, scalable app. We saw a 40% increase in user engagement after launch!",
-    href: "https://nextjs.org"
+      "Wish-Light transformed our idea into a polished, production-ready product. Their attention to detail, clean design approach, and technical expertise made the entire process smooth and stress-free. We felt supported from concept to launch — truly outstanding work."
   }
 ]
 
@@ -95,25 +83,36 @@ const Homethree = () => {
   const velocity = 35
 
   const testimonialCard = (t: any, i: React.Key) => (
-  <Link
+  <div
     key={i}
-    href={t.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block min-w-[300px] max-w-[350px]"
     aria-label={`Testimonial from ${t.name}`}
+    className="min-w-[300px] max-w-[350px]"
   >
-    <div className="flex flex-col justify-center items-start bg-gradient-to-b from-[#0f0f0f] to-[#050505] border border-[#1f1f1f] rounded-2xl p-5 md:p-7 text-white/90 ">
-      <p className="text-gray-300 text-sm italic mb-4 leading-relaxed whitespace-normal break-words line-clamp-4">
+    <div
+      className="flex flex-col bg-gradient-to-b from-[#0f0f0f] to-[#050505] border border-[#1f1f1f] rounded-2xl p-6 text-white/90 transition-transform duration-300 hover:-translate-y-1"
+    >
+      <p
+        title={t.testimonial}
+        className="text-gray-300 text-sm italic mb-4 leading-relaxed line-clamp-4"
+      >
         “{t.testimonial}”
       </p>
-      <div className="flex items-center gap-4 mt-4">
-        <Image src={t.img} alt={t.name} width={50} height={50} className="rounded-full" />
-        <h3 className="font-bold text-sm">{t.name}</h3>
+
+      <div className="flex items-center gap-4 mt-auto">
+        <Image
+          src={t.img}
+          alt={`Avatar of ${t.name}`}
+          width={50}
+          height={50}
+          loading="lazy"
+          className="rounded-full"
+        />
+        <h3 className="font-semibold text-sm">{t.name}</h3>
       </div>
     </div>
-  </Link>
+  </div>
 )
+
 
 
   return (
