@@ -15,6 +15,8 @@ export const metadata: Metadata = {
   description: "Website, Android, and iOS app developer portfolio",
 };
 
+
+
 const page = () => {
   return (
     <div >
