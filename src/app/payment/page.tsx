@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { sendGTMEvent } from '@next/third-parties/google'
 
 export default function Payment() {
   const [amount, setAmount] = useState("");
@@ -87,7 +88,10 @@ export default function Payment() {
         </div>
 
         <button
-          onClick={handlePay}
+          onClick={() => {
+            sendGTMEvent({ event: 'buttonClicked', value: 'xyz' });
+            handlePay();
+          }}
           className="mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-lg font-semibold hover:shadow-xl hover:scale-[1.02] active:scale-95 transition"
         >
           Pay Now
