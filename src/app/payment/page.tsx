@@ -40,6 +40,16 @@ export default function Payment() {
       theme: { color: "#6366f1" },
       handler: (res: any) => {
         alert("Payment Success: " + res.razorpay_payment_id);
+
+        // ✅ Google Ads Conversion (REQUIRED)
+        if (window.gtag) {
+          window.gtag("event", "conversion", {
+            send_to: "AW-11219169717/gAyhCPmLkt8bELXj2-Up",
+            value: Number(amount),
+            currency: currency,
+            transaction_id: res.razorpay_payment_id, // PERFECT ID
+          });
+  }
       },
     });
 
@@ -88,10 +98,7 @@ export default function Payment() {
         </div>
 
         <button
-          onClick={() => {
-            sendGTMEvent({ event: 'buttonClicked', value: amount, currency: currency });
-            handlePay();
-          }}
+          onClick={handlePay}
           className="mt-6 w-full py-3 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-lg font-semibold hover:shadow-xl hover:scale-[1.02] active:scale-95 transition"
         >
           Pay Now
