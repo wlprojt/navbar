@@ -35,10 +35,10 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <GoogleTagManager gtmId="AW-11219169717" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <GoogleTagManager gtmId="GTM-TLCJ7GTL" />
         <ThemeProvider
             attribute="class"
             defaultTheme="dark"
