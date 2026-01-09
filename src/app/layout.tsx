@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+
 import Navbar from "@/components/Navbar";
-import { ThemeProvider } from "@/components/theme-provider"
 import Footer from "@/components/Footer";
-import { auth } from '@/lib/auth';
-import { headers } from 'next/headers';
-import { GoogleTagManager } from '@next/third-parties/google'
+import { ThemeProvider } from "@/components/theme-provider";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,28 +26,39 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  // ✅ Fetch session inside async layout
+}) {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11219169717"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-11219169717');
+          `}
+        </Script>
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <GoogleTagManager gtmId="GTM-TLCJ7GTL" />
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-          >
-            <Navbar session={session}/>
-            {children}
-            <Footer />
-          </ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <Navbar session={session} />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
