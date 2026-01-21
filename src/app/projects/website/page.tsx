@@ -44,7 +44,7 @@ const website = [
     resource: 'TypeScript, Next.js, Gemini API',
     description:
       'The Chat Bot Website is an AI-powered conversational web app built with Next.js, TypeScript, and Google’s Gemini API. It features real-time chat responses, a minimal UI, and smooth message animations — offering users an interactive and intelligent assistant experience directly in the browser.',
-    youtube: 'https://youtu.be/BWsKtWLlaHA?si=JMxGceklihtEdclV',
+    youtube: 'https://youtu.be/Mus3M6am0mw?si=ujrKPBEshO581AWm',
     github: 'https://github.com/wlprojt/Chatbot',
   }
 ];

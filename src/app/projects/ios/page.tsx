@@ -42,7 +42,7 @@ const ios= [
       resource: 'Swift, SwiftUI, API',
       description:
         'Chatbot is an engaging iOS application developed with Swift and SwiftUI that leverages advanced AI APIs to provide intelligent conversational experiences. The app features a sleek, user-friendly interface with smooth animations, allowing users to interact with the chatbot seamlessly. Whether for casual conversation or information retrieval, iChatbot delivers accurate responses in real-time, all while maintaining a visually appealing design optimized for both light and dark modes.',
-      youtube: 'https://youtu.be/9Js-WFiZjhs?si=fqB1lok6pObl30Ua',
+      youtube: 'https://youtu.be/jn8CXCtKt3g?si=IGS-OAanfWxX3zFU',
       github: 'https://github.com/wlprojt/iChatbot'
     }
   ]
