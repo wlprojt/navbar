@@ -12,6 +12,15 @@ import { FaYoutube } from "react-icons/fa";
 
 const website = [
   {
+    image: '/wishmart.png',
+    title: 'E-commerce Website',
+    resource: 'TypeScript, Next.js, MongoDB',
+    description:
+      'The E-commerce Website is a modern full-stack shopping platform built with Next.js, TypeScript, and MongoDB. It offers secure data storage, a responsive design, and smooth UI interactions for an intuitive shopping experience. Users can create, edit, and manage products and orders easily — all within a fast and scalable web app.',
+    youtube: 'https://www.youtube.com/watch?v=WKpAQ3wr0O4',
+    github: 'https://github.com/wlprojt/wishmart',
+  },
+  {
     image: '/wnote.png',
     title: 'Notes Website',
     resource: 'TypeScript, Next.js, MongoDB',

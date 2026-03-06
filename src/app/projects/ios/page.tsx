@@ -11,6 +11,14 @@ import { FaGithub } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
 const ios= [
+  {
+      image: '/iwishmart.png',
+      title: 'E-commerce App',
+      resource: 'Swift, Swift UI, Mongo Database',
+      description: 'The E-commerce App is a modern shopping application built with Swift, Swift UI, and Mongo Database. It features a clean, intuitive interface with real-time data persistence, google and email authentication, and smooth animations. Designed for productivity and simplicity, it lets users create, edit, and organize notes effortlessly — all while maintaining a beautiful and responsive UI built entirely with Swift UI.',
+      youtube: 'https://www.youtube.com/watch?v=rlI1RuqdS3g',
+      github: 'https://github.com/wlprojt/iWihsmart'
+    },
     {
       image: '/inote.png',
       title: 'Notes App',

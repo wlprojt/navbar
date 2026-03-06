@@ -6,6 +6,33 @@ import ChromaGrid from './ChromaGrid'
 
 const projects = [
   {
+    image: "/wishmart.png",
+    title: "E-commerce",
+    subtitle: "Next js",
+    handle: "Website",
+    borderColor: "#3bf6b5",
+    gradient: "linear-gradient(145deg, #a1edd3, #036342)",
+    url: "https://www.youtube.com/watch?v=WKpAQ3wr0O4"
+  },
+  {
+    image: "/awishmart.png",
+    title: "E-commerce",
+    subtitle: "Kotlin",
+    handle: "Android App",
+    borderColor: "rgb(243, 11, 11)",
+    gradient: "linear-gradient(180deg, rgb(243, 141, 141), rgb(156, 5, 5))",
+    url: "https://www.youtube.com/watch?v=Ornj3_rEpXM"
+  },
+  {
+    image: "/iwishmart.png",
+    title: "E-commerce",
+    subtitle: "Swift",
+    handle: "iOS App",
+    borderColor: "rgb(181, 11, 248)",
+    gradient: "linear-gradient(145deg, rgb(191, 129, 246), rgb(70, 4, 141))",
+    url: "https://www.youtube.com/watch?v=rlI1RuqdS3g"
+  },
+  {
     image: "/wnote.png",
     title: "Notes",
     subtitle: "Next js",

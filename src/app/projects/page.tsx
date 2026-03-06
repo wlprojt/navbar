@@ -12,6 +12,14 @@ import { FaYoutube } from "react-icons/fa";
 
 const android= [
     {
+      image: '/awishmart.png',
+      title: 'E-commerce App',
+      resource: 'Kotlin, Jetpack Compose, Mongo Database',
+      description: 'The E-commerce App is a modern shopping application built with Kotlin, Jetpack Compose, and Mongo Database. It features a clean, intuitive interface with real-time data persistence, Google and email authentication, and smooth animations. Designed for productivity and simplicity, it lets users create, edit, and organize notes effortlessly — all while maintaining a beautiful and responsive UI built entirely with Compose.',
+      youtube: 'https://www.youtube.com/watch?v=Ornj3_rEpXM&t=4s',
+      github: 'https://github.com/wlprojt/AWishmart'
+    },
+    {
       image: '/anote.png',
       title: 'Notes App',
       resource: 'Kotlin, Jetpack Compose, Room Database',
